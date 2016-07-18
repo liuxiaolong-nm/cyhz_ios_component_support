@@ -6,6 +6,9 @@
 //  Copyright (c) 2016 liuxiaolong. All rights reserved.
 //
 
+#import "CyhzSupportHeads.h"
+#import "Http.h"
+
 @import UIKit;
 
 @interface CyhzViewController : UIViewController

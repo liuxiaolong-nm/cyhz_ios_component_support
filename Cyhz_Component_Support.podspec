@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Cyhz_Component_Support'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Cyhz_Component_Support.'
+  s.summary          = '是车源汇众公司在ios sdk 包装的工具类'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,45 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                         是车源汇众公司在ios sdk 包装的工具类，是其他模块的机场。
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/Cyhz_Component_Support'
+  s.homepage         = 'https://github.com/liuxiaolong-nm/cyhz_ios_component_support'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'liuxiaolong' => 'liuxl@cyhz.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/Cyhz_Component_Support.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/liuxiaolong-nm/cyhz_ios_component_support.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.ios.deployment_target = '7.0'
+  s.source_files = 'Cyhz_Component_Support/*'
+  s.public_header_files = 'Cyhz_Component_Support/*.h'
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'Cyhz_Component_Support/Classes/**/*'
-  
+  s.subspec 'util' do |ss|
+       ss.source_files = 'Cyhz_Component_Support/Classes/util/*'
+       ss.public_header_files = 'Cyhz_Component_Support/Classes/util/*.h'
+   end
+   
+   s.subspec 'save' do |ss|
+       ss.source_files = 'Cyhz_Component_Support/Classes/save/**/*'
+       ss.public_header_files = 'Cyhz_Component_Support/Classes/save/**/*.h'
+       ss.dependency 'Cyhz_Component_Support/util'
+   end
+   
+  s.subspec 'popview' do |ss|
+        ss.source_files = 'Cyhz_Component_Support/Classes/popview/**/*'
+        ss.public_header_files = 'Cyhz_Component_Support/Classes/popview/**/*.h'
+    end
+   
+ s.subspec 'net' do |ss|
+       ss.source_files = 'Cyhz_Component_Support/Classes/net/**/*'
+       ss.public_header_files = 'Cyhz_Component_Support/Classes/net/**/*.h'
+       ss.dependency 'Cyhz_Component_Support/popview'
+   end
   # s.resource_bundles = {
   #   'Cyhz_Component_Support' => ['Cyhz_Component_Support/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+ s.frameworks = 'UIKit', 'MapKit','Foundation','SystemConfiguration'
+ s.dependency 'AFNetworking', '~> 2.6.3'
+ s.dependency 'MBProgressHUD', '~> 0.9.1'
 end

@@ -1,0 +1,69 @@
+{
+  "name": "Cyhz_Component_Support",
+  "version": "0.1.0",
+  "summary": "是车源汇众公司在ios sdk 包装的工具类",
+  "description": "是车源汇众公司在ios sdk 包装的工具类，是其他模块的机场。",
+  "homepage": "https://github.com/liuxiaolong-nm/cyhz_ios_component_support",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "liuxiaolong": "liuxl@cyhz.com"
+  },
+  "source": {
+    "git": "https://github.com/liuxiaolong-nm/cyhz_ios_component_support.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "Cyhz_Component_Support/*",
+  "public_header_files": "Cyhz_Component_Support/*.h",
+  "frameworks": [
+    "UIKit",
+    "MapKit",
+    "Foundation",
+    "SystemConfiguration"
+  ],
+  "dependencies": {
+    "AFNetworking": [
+      "~> 2.6.3"
+    ],
+    "MBProgressHUD": [
+      "~> 0.9.1"
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "util",
+      "source_files": "Cyhz_Component_Support/Classes/util/*",
+      "public_header_files": "Cyhz_Component_Support/Classes/util/*.h"
+    },
+    {
+      "name": "save",
+      "source_files": "Cyhz_Component_Support/Classes/save/**/*",
+      "public_header_files": "Cyhz_Component_Support/Classes/save/**/*.h",
+      "dependencies": {
+        "Cyhz_Component_Support/util": [
+
+        ]
+      }
+    },
+    {
+      "name": "popview",
+      "source_files": "Cyhz_Component_Support/Classes/popview/**/*",
+      "public_header_files": "Cyhz_Component_Support/Classes/popview/**/*.h"
+    },
+    {
+      "name": "net",
+      "source_files": "Cyhz_Component_Support/Classes/net/**/*",
+      "public_header_files": "Cyhz_Component_Support/Classes/net/**/*.h",
+      "dependencies": {
+        "Cyhz_Component_Support/popview": [
+
+        ]
+      }
+    }
+  ]
+}

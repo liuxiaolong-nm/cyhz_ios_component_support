@@ -1,0 +1,6 @@
+framework module Pods_Cyhz_Component_Support_Example {
+  umbrella header "Pods-Cyhz_Component_Support_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
