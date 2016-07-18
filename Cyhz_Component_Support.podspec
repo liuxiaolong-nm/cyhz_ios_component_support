@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/liuxiaolong-nm/cyhz_ios_component_support.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.ios.deployment_target = '7.0'
-  s.source_files = 'Cyhz_Component_Support/*'
-  s.public_header_files = 'Cyhz_Component_Support/*.h'
+  s.source_files = 'Cyhz_Component_Support/Classes/*'
+  s.public_header_files = 'Cyhz_Component_Support/Classes/*.h'
 
   s.subspec 'util' do |ss|
        ss.source_files = 'Cyhz_Component_Support/Classes/util/*'
