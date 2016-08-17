@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "354C4206621C699D890AD8273D2860BBFD2CA44D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E2BE0FE5861DD67CB7CE12D25D97071037668190" : 0,
+    "354C4206621C699D890AD8273D2860BBFD2CA44D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "74031329-7609-40C4-AF7B-520876850A83",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E2BE0FE5861DD67CB7CE12D25D97071037668190" : "..",
+    "354C4206621C699D890AD8273D2860BBFD2CA44D" : "Cyhz_Component_Support\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Cyhz_Component_Support",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/Cyhz_Component_Support.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/liuxiaolong-nm\/cyhz_ios_component_support.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "354C4206621C699D890AD8273D2860BBFD2CA44D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "10.0.0.23:root\/cyhz_client_doc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E2BE0FE5861DD67CB7CE12D25D97071037668190"
+    }
+  ]
+}

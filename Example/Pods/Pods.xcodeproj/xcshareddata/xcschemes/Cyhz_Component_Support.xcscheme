@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '805C883E8449B3638C4B7F6C'
+               BlueprintIdentifier = '41A2112A92B3F0D9C0D0EA78'
                BlueprintName = 'Cyhz_Component_Support'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Cyhz_Component_Support.framework'>

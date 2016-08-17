@@ -23,7 +23,7 @@
 		2F1CEE8E864B260987AFDF2BEA1B74F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9135E841E403EC6CDBEE87F1020F7813 /* SystemConfiguration.framework */; };
 		32BE0FB08D9ECD2974197D862E320E36 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E57AF516F539B118AD4DA2D861AC3A69 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34BEE08ED8F8B9B3B939D4D732CFBEFE /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98683B5077B827586F95CE19972C47E8 /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38E0E5EB3515C4FEC5799967E2C384FF /* CyhzSupportHeads.h in Headers */ = {isa = PBXBuildFile; fileRef = 937C6737A49B910D7DEDF55A95EFD5D4 /* CyhzSupportHeads.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38E0E5EB3515C4FEC5799967E2C384FF /* CyhzSupportHeads.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F1623C52A7EA03CF819441114C79200 /* CyhzSupportHeads.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A7FE81FF3C97DDFA9F5D7B692369683 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9135E841E403EC6CDBEE87F1020F7813 /* SystemConfiguration.framework */; };
 		3B9733DCC372AB98C6BF22936296DA15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FE55E875CBD9B4F3A3ED2AC95BB6D6 /* Foundation.framework */; };
 		3FA62D380F5B4B6E67890358798E3BC4 /* CyDiskSave.h in Headers */ = {isa = PBXBuildFile; fileRef = C7235A499A7FA3C1541226BBD23FB49D /* CyDiskSave.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -167,6 +167,7 @@
 		24EC266D2EF2A891060B6CCFDD5EA203 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		24FBDF7005B82BB4908AA217EFC3B639 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		2B81EE0CFCEDC777C6504CB5DCF6513F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		2F1623C52A7EA03CF819441114C79200 /* CyhzSupportHeads.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CyhzSupportHeads.h; sourceTree = "<group>"; };
 		2F7ECA2F8B2AFCDF9935EC01AF65A39F /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		31C43343D12D8318F8446A04D6FD714C /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		32090DB404170138B72BD062A9DBAD56 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
@@ -217,7 +218,6 @@
 		91E3EAA3DA096F7A948945977E3FF8D3 /* CyFileUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CyFileUtil.h; sourceTree = "<group>"; };
 		92592772B504EC6F4C10910698CC7D7F /* Cyhz_Component_Support.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cyhz_Component_Support.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		929A439658B65C567678D29088356C87 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		937C6737A49B910D7DEDF55A95EFD5D4 /* CyhzSupportHeads.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CyhzSupportHeads.h; sourceTree = "<group>"; };
 		977DBF5AFBF865D6568340BEE2881722 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98185E55AB00B37C19C9B076CED4F7E0 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		98683B5077B827586F95CE19972C47E8 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
@@ -510,14 +510,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		724FCA8F1D0BB0F41A7047F7E804DDEB /* Cyhz_Component_Support */ = {
-			isa = PBXGroup;
-			children = (
-				937C6737A49B910D7DEDF55A95EFD5D4 /* CyhzSupportHeads.h */,
-			);
-			path = Cyhz_Component_Support;
-			sourceTree = "<group>";
-		};
 		7B5F94BB778D1FC6F4122984D9940955 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +580,14 @@
 			path = Cyhz_Component_Support;
 			sourceTree = "<group>";
 		};
+		8C5DA08B51538F7F113421DD47645C5E /* Cyhz_Component_Support */ = {
+			isa = PBXGroup;
+			children = (
+				BA442F7B97DED69869AF269002833C32 /* Classes */,
+			);
+			path = Cyhz_Component_Support;
+			sourceTree = "<group>";
+		};
 		8FD5279258679CB01BF042F62454DFCE /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +611,14 @@
 				1F063584C3FF615CF2B4F88FE01EB205 /* Reachability.m */,
 			);
 			path = net;
+			sourceTree = "<group>";
+		};
+		BA442F7B97DED69869AF269002833C32 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2F1623C52A7EA03CF819441114C79200 /* CyhzSupportHeads.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		BCFFBFC25C7B367DE443AF9CC3AF6CF6 /* iOS */ = {
@@ -647,7 +655,7 @@
 		C7FD26868FBE7AAAF22988B95B2A7D53 /* Cyhz_Component_Support */ = {
 			isa = PBXGroup;
 			children = (
-				724FCA8F1D0BB0F41A7047F7E804DDEB /* Cyhz_Component_Support */,
+				8C5DA08B51538F7F113421DD47645C5E /* Cyhz_Component_Support */,
 				D619F6F99DBC68C4C5AA3C79A2D02CFC /* net */,
 				522A956D9E49A26EA78DDDA0F01B4EDA /* popview */,
 				CCC95C198E51729962F9D88B3DC4CE19 /* save */,
