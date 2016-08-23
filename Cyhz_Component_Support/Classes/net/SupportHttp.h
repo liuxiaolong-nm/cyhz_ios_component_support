@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 liuxiaolong. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 
 typedef void(^Back)(id model);
