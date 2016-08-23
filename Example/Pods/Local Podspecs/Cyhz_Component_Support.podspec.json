@@ -1,6 +1,6 @@
 {
   "name": "Cyhz_Component_Support",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "summary": "是车源汇众公司在ios sdk 包装的工具类",
   "description": "是车源汇众公司在ios sdk 包装的工具类，是其他模块的机场。",
   "homepage": "https://github.com/liuxiaolong-nm/cyhz_ios_component_support",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/liuxiaolong-nm/cyhz_ios_component_support.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "7.0"

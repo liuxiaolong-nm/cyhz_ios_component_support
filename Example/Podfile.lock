@@ -20,25 +20,25 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Cyhz_Component_Support (0.1.1):
+  - Cyhz_Component_Support (0.1.2):
     - AFNetworking (~> 2.6.3)
-    - Cyhz_Component_Support/net (= 0.1.1)
-    - Cyhz_Component_Support/popview (= 0.1.1)
-    - Cyhz_Component_Support/save (= 0.1.1)
-    - Cyhz_Component_Support/util (= 0.1.1)
+    - Cyhz_Component_Support/net (= 0.1.2)
+    - Cyhz_Component_Support/popview (= 0.1.2)
+    - Cyhz_Component_Support/save (= 0.1.2)
+    - Cyhz_Component_Support/util (= 0.1.2)
     - MBProgressHUD (~> 0.9.1)
-  - Cyhz_Component_Support/net (0.1.1):
+  - Cyhz_Component_Support/net (0.1.2):
     - AFNetworking (~> 2.6.3)
     - Cyhz_Component_Support/popview
     - MBProgressHUD (~> 0.9.1)
-  - Cyhz_Component_Support/popview (0.1.1):
+  - Cyhz_Component_Support/popview (0.1.2):
     - AFNetworking (~> 2.6.3)
     - MBProgressHUD (~> 0.9.1)
-  - Cyhz_Component_Support/save (0.1.1):
+  - Cyhz_Component_Support/save (0.1.2):
     - AFNetworking (~> 2.6.3)
     - Cyhz_Component_Support/util
     - MBProgressHUD (~> 0.9.1)
-  - Cyhz_Component_Support/util (0.1.1):
+  - Cyhz_Component_Support/util (0.1.2):
     - AFNetworking (~> 2.6.3)
     - MBProgressHUD (~> 0.9.1)
   - MBProgressHUD (0.9.2)
@@ -52,7 +52,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  Cyhz_Component_Support: 90df5647d8d845e050b1f88feb864edd3aee9e35
+  Cyhz_Component_Support: ed8e4a3ba56ba49546c981c476511ec8410465b3
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 3ad23a18a84fe4fc6e9e5f221c38f4e8d9fe0478
+
+COCOAPODS: 1.0.1

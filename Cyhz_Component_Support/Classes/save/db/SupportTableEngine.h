@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "SupportDB.h"
-#import <Realm/Realm.h>
 #import "SupportDBCondition.h"
 
-@interface SupportTableEngine : RLMObject<SupportDBTable>
+@interface SupportTableEngine : NSObject<SupportDBTable>
 
 @property NSString *mId;
 

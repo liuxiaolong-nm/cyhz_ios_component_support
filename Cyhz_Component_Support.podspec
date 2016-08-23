@@ -59,4 +59,5 @@ Pod::Spec.new do |s|
  s.frameworks = 'UIKit', 'MapKit','Foundation','SystemConfiguration'
  s.dependency 'AFNetworking', '~> 2.6.3'
  s.dependency 'MBProgressHUD', '~> 0.9.1'
+#  s.dependency 'Realm'
 end
