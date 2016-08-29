@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Cyhz_Component_Support'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = '是车源汇众公司在ios sdk 包装的工具类'
 
 # This description is used to generate tags and improve search results.
@@ -37,6 +37,7 @@ Pod::Spec.new do |s|
        ss.source_files = 'Cyhz_Component_Support/Classes/vc/**/*'
        ss.public_header_files = 'Cyhz_Component_Support/Classes/vc/**/*.h'
    end
+   
   s.subspec 'util' do |ss|
        ss.source_files = 'Cyhz_Component_Support/Classes/util/*'
        ss.public_header_files = 'Cyhz_Component_Support/Classes/util/*.h'
