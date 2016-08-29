@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 liuxiaolong. All rights reserved.
 //
 
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 
 typedef void(^Back)(id model);
 typedef void(^Errer)(NSError *error);

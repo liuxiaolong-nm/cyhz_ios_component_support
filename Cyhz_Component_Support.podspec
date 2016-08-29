@@ -20,7 +20,9 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                          是车源汇众公司在ios sdk 包装的工具类，是其他模块的机场。
                        DESC
-
+  # s.prepare_command = <<-CMD
+#                         find Pods -regex 'Pods/pop.*\\.h' -print0 | xargs -0 sed -i '' 's/\\(<\\)pop\\/\\(.*\\)\\(>\\)/\\"\\2\\"/'
+#                        CMD
   s.homepage         = 'https://github.com/liuxiaolong-nm/cyhz_ios_component_support'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -31,6 +33,10 @@ Pod::Spec.new do |s|
   s.source_files = 'Cyhz_Component_Support/Classes/*'
   s.public_header_files = 'Cyhz_Component_Support/Classes/*.h'
 
+  s.subspec 'vc' do |ss|
+       ss.source_files = 'Cyhz_Component_Support/Classes/vc/**/*'
+       ss.public_header_files = 'Cyhz_Component_Support/Classes/vc/**/*.h'
+   end
   s.subspec 'util' do |ss|
        ss.source_files = 'Cyhz_Component_Support/Classes/util/*'
        ss.public_header_files = 'Cyhz_Component_Support/Classes/util/*.h'

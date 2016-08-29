@@ -7,7 +7,7 @@
 //
 
 #import "SupportHttp.h"
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface SupportHttpPB : SupportHttp
 
