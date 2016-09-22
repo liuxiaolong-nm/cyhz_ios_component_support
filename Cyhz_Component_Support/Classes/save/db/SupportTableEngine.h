@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SupportDB.h"
 #import "SupportDBCondition.h"
+#import <Realm/Realm.h>
 
 @interface SupportTableEngine : NSObject<SupportDBTable>
 

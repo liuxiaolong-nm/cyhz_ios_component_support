@@ -27,7 +27,6 @@
     saveKey = [NSString stringWithFormat:@"%@.txt",saveKey];
     BOOL create = [mCyFileUtil createFile:saveKey Data:data];
     NSString *content = create?@"ok":@"no";
-    SupportLog(@"asklvnasvasv");
     NSLog(@"CyDiskSave...saveReal...%@",content);
 }
 

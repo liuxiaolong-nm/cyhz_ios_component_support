@@ -19,24 +19,15 @@ typedef void(^SupportDBUpdateAction)();
 
 @protocol SupportDBTable <NSObject>
 
-@optional
- -(id)save;
+ -(id)supportSave;
 
- -(id)saveAll:(NSArray*)items;
+ -(id)supportRemove;
 
- -(id)remove;
+ -(id)supportUpdate:(id)value Key:(NSString*)key;
 
- -(id)remove:(NSArray*)conditions;
+ +(id)supportRemoveAll;
 
- -(id)removeAll;
-
- -(id)update:(SupportDBUpdateAction)action;
-
- -(id)updateAll:(NSArray*)actions;
-
- -(NSArray*)querys:(SupportDBCondition*)conditions;
-
- -(NSArray*)queryAll;
+ +(NSArray*)supportQueryAll;
 
 @end
 
