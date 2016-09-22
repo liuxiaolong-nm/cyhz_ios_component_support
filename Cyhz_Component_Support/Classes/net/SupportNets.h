@@ -10,5 +10,6 @@
 #define net_h
 
 #import "SupportHttpPB.h"
+#import "SupportReachability.h"
 
 #endif /* net_h */
