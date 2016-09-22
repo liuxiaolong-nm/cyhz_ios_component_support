@@ -11,7 +11,7 @@
 #import "SupportDBCondition.h"
 #import <Realm/Realm.h>
 
-@interface SupportTableEngine : NSObject<SupportDBTable>
+@interface SupportTableEngine : RLMObject<SupportDBTable>
 
 @property NSString *mId;
 
