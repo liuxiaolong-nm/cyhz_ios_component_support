@@ -100,8 +100,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
                                                                            action:@selector(constrain:)];
         self.toolbarItems = @[flexibleSpace, constrainButton, flexibleSpace];
     }
-    self.navigationController.toolbarHidden = self.toolbarHidden;
-    
+//    self.navigationController.toolbarHidden = self.toolbarHidden;
     self.cropView.image = self.image;
     
     self.cropView.rotationGestureRecognizer.enabled = _rotationEnabled;
@@ -122,6 +121,13 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     }
     
     self.keepingCropAspectRatio = self.keepingCropAspectRatio;
+    
+    /**
+     *  修改默认为正方形。
+     *
+     *  liuxiaolong 2016-08-31 19:01
+     */
+    self.cropView.cropAspectRatio = 1.0f;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

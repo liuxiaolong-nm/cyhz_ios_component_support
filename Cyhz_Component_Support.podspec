@@ -37,6 +37,7 @@ Pod::Spec.new do |s|
   s.subspec 'vc' do |ss|
        ss.source_files = 'Cyhz_Component_Support/Classes/vc/**/*'
        ss.public_header_files = 'Cyhz_Component_Support/Classes/vc/**/*.h'
+       ss.resources = 'Cyhz_Component_Support/Classes/vc/cropimgvc/PEPhotoCropEditor.bundle'
    end
    
   s.subspec 'util' do |ss|
