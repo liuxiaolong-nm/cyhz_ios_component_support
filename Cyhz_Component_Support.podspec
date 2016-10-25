@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Cyhz_Component_Support'
-  s.version          = '0.1.9'
+  s.version          = '0.2.0'
   s.summary          = '是车源汇众公司在ios sdk 包装的工具类'
 
 # This description is used to generate tags and improve search results.
@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   #   'Cyhz_Component_Support' => ['Cyhz_Component_Support/Assets/*.png']
   # }
 
- s.dependency 'AFNetworking', '= 2.6.3'
+ s.dependency 'AFNetworking', '= 3.0'
  s.dependency 'MBProgressHUD', '= 0.9.1'
  s.dependency 'Realm', '= 1.1.0'
 

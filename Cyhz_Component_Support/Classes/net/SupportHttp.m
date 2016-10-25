@@ -16,7 +16,7 @@
 @implementation SupportHttp{
     SupportReachability *conn;
     int timeOut;
-    AFHTTPRequestOperationManager *manager;
+    AFHTTPSessionManager *manager;
     bool isBack;
 }
 
@@ -24,7 +24,7 @@
     self = [super init];
     conn = [SupportReachability reachabilityForInternetConnection];
     isBack = false;
-    manager = [[AFHTTPRequestOperationManager alloc] init];
+    manager = [AFHTTPSessionManager manager];
     [self setTimeout:15];
     return self;
 }
@@ -47,12 +47,14 @@
         errer(er);
         return;
     }
-    [manager GET:host parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:host parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (!isBack) {
             NSDictionary *data = responseObject;
             back(data);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (errer) {
             errer(error);
         }
@@ -67,12 +69,14 @@
         errer(er);
         return;
     }
-    [manager POST:host parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:host parameters:dic progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (!isBack) {
             NSDictionary *data = responseObject;
             back(data);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (errer) {
             errer(error);
         }
