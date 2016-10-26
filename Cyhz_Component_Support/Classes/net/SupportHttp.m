@@ -47,7 +47,7 @@
         errer(er);
         return;
     }
-    [manager GET:host parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:host parameters:dic progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (!isBack) {
