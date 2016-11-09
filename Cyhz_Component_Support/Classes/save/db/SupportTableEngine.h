@@ -15,5 +15,9 @@
 
 @property NSString *mId;
 
+//设置数据变化监听者。
+//liuxiaolong 201611091634
+-(void)setDataObServer:(id<SupportDBTable>)observer;
+
 @end
 

@@ -9,13 +9,18 @@
 #import "SupportTableEngine.h"
 #import "SupportUtils.h"
 
-@implementation SupportTableEngine
+@implementation SupportTableEngine{
+    id<SupportDBTable> mDataObserver;
+}
 
 -(id)supportSave{
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
     [realm addObject:self];
     [realm commitWriteTransaction];
+    if(mDataObserver && [mDataObserver respondsToSelector:@selector(supportSave)]){
+        [mDataObserver supportSave];
+    }
     return self;
 }
 
@@ -24,6 +29,9 @@
     [realm beginWriteTransaction];
     [realm deleteObject:self];
     [realm commitWriteTransaction];
+    if(mDataObserver && [mDataObserver respondsToSelector:@selector(supportRemove)]){
+        [mDataObserver supportRemove];
+    }
     return self;
 }
 
@@ -32,7 +40,14 @@
     [realm beginWriteTransaction];
     [self setValue:value forKey:key];
     [realm commitWriteTransaction];
+    if(mDataObserver && [mDataObserver respondsToSelector:@selector(supportUpdate:Key:)]){
+        [mDataObserver supportUpdate:value Key:key];
+    }
     return self;
+}
+
+-(void)setDataObServer:(id<SupportDBTable>)observer{
+    mDataObserver = observer;
 }
 
 +(id)supportRemoveAll{

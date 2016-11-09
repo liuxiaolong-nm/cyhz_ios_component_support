@@ -19,6 +19,7 @@ typedef void(^SupportDBUpdateAction)();
 
 @protocol SupportDBTable <NSObject>
 
+@optional
  -(id)supportSave;
 
  -(id)supportRemove;
