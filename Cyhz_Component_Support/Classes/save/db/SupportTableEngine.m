@@ -10,7 +10,8 @@
 #import "SupportUtils.h"
 
 @implementation SupportTableEngine{
-    id<SupportDBTable> mDataObserver;
+    SupportDBTableObServer mDataObserver;
+    RLMNotificationToken *token;
 }
 
 -(id)supportSave{
@@ -18,9 +19,6 @@
     [realm beginWriteTransaction];
     [realm addObject:self];
     [realm commitWriteTransaction];
-    if(mDataObserver && [mDataObserver respondsToSelector:@selector(supportSave)]){
-        [mDataObserver supportSave];
-    }
     return self;
 }
 
@@ -29,9 +27,6 @@
     [realm beginWriteTransaction];
     [realm deleteObject:self];
     [realm commitWriteTransaction];
-    if(mDataObserver && [mDataObserver respondsToSelector:@selector(supportRemove)]){
-        [mDataObserver supportRemove];
-    }
     return self;
 }
 
@@ -40,14 +35,27 @@
     [realm beginWriteTransaction];
     [self setValue:value forKey:key];
     [realm commitWriteTransaction];
-    if(mDataObserver && [mDataObserver respondsToSelector:@selector(supportUpdate:Key:)]){
-        [mDataObserver supportUpdate:value Key:key];
-    }
     return self;
 }
 
--(void)setDataObServer:(id<SupportDBTable>)observer{
+-(void)setDataObServer:(SupportDBTableObServer)observer{
     mDataObserver = observer;
+    token = [[self.class objectsWhere:@"mId != '1'"] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
+        RLMResults *res =[self.class allObjects];
+        NSMutableArray *datas = [NSMutableArray new];
+        for (RLMObject *object in res) {
+            [datas addObject:object];
+        }
+        if (observer) {
+            observer(datas);
+        }
+    }];
+}
+
+-(void)cancelDataObServer{
+    if (token) {
+        [token stop];
+    }
 }
 
 +(id)supportRemoveAll{
