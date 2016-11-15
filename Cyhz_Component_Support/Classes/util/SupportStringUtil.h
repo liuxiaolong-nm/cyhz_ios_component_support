@@ -32,4 +32,9 @@
  *  liuxiaolong 2016-08-05 16:58
  */
 +(NSString*)GetUUIDString;
+
+//MD5 32位加密。
+//liuxiaolong 201611151150
++ (NSString *)md5_32bit:(NSString *)input;
+
 @end
