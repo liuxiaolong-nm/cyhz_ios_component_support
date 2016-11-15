@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Cyhz_Component_Support'
-  s.version          = '0.2.3'
+  s.version          = '0.2.4'
   s.summary          = '是车源汇众公司在ios sdk 包装的工具类'
 
 # This description is used to generate tags and improve search results.
