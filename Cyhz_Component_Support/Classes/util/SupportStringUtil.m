@@ -44,4 +44,10 @@
          //返回一个长度为32的字符串
          return ret;
      }
+
++(BOOL)isPureInt:(NSString*)string{
+    NSScanner* scan = [NSScanner scannerWithString:string];
+    int val;
+    return[scan scanInt:&val] && [scan isAtEnd];
+}
 @end

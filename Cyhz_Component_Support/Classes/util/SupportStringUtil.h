@@ -37,4 +37,8 @@
 //liuxiaolong 201611151150
 + (NSString *)md5_32bit:(NSString *)input;
 
+//判断字符串是否是纯数字。
+//liuxiaolong 201611181642
++ (BOOL)isPureInt:(NSString*)string;
+
 @end
