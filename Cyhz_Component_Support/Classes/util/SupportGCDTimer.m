@@ -34,7 +34,7 @@
     //创建一个定时器
     self.time = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     //设置开始时间
-    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(NSEC_PER_SEC));
+    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay *NSEC_PER_SEC));
     //设置时间间隔
     uint64_t interval = (uint64_t)(delay *NSEC_PER_SEC);
     //设置定时器
