@@ -32,6 +32,12 @@ typedef void(^SupportDBUpdateAction)();
 
 @end
 
+@protocol SupportDBTableExt <NSObject>
 
+@optional
+
+-(id)supportUpdate:(NSDictionary*)dic;
+
+@end
 
 #endif /* SupportDB_h */

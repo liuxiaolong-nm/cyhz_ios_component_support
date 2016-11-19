@@ -13,7 +13,7 @@
 
 typedef void(^SupportDBTableObServer)(NSArray<id> *datas);
 
-@interface SupportTableEngine : RLMObject<SupportDBTable>
+@interface SupportTableEngine : RLMObject<SupportDBTable,SupportDBTableExt>
 
 @property NSString *mId;
 

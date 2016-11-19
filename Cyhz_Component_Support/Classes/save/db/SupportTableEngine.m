@@ -10,7 +10,7 @@
 #import "SupportUtils.h"
 
 @implementation SupportTableEngine{
-    SupportDBTableObServer mDataObserver;
+    NSMutableArray<SupportDBTableObServer> *mDataObservers;
     RLMNotificationToken *token;
 }
 
@@ -38,21 +38,40 @@
     return self;
 }
 
+-(id)supportUpdate:(NSDictionary *)dic{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    __weak typeof(self) weakself = self;
+    [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [weakself setValue:obj forKey:key];
+    }];
+    [realm commitWriteTransaction];
+    return self;
+}
+
 -(void)setDataObServer:(SupportDBTableObServer)observer{
-    mDataObserver = observer;
+    if (!mDataObservers) {
+        mDataObservers = [NSMutableArray new];
+    }
+    [mDataObservers addObject:observer];
     token = [[self.class objectsWhere:@"mId != '1'"] addNotificationBlock:^(RLMResults * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
         RLMResults *res =[self.class allObjects];
         NSMutableArray *datas = [NSMutableArray new];
         for (RLMObject *object in res) {
             [datas addObject:object];
         }
-        if (observer) {
-            observer(datas);
-        }
+        [mDataObservers enumerateObjectsUsingBlock:^(SupportDBTableObServer  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj) {
+                obj(datas);
+            }
+        }];
     }];
 }
 
 -(void)cancelDataObServer{
+    if (mDataObservers) {
+        [mDataObservers removeAllObjects];
+    }
     if (token) {
         [token stop];
     }
