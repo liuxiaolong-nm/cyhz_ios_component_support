@@ -10,7 +10,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "74031329-7609-40C4-AF7B-520876850A83",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "E2BE0FE5861DD67CB7CE12D25D97071037668190" : "..",
-    "354C4206621C699D890AD8273D2860BBFD2CA44D" : "Cyhz_Component_Support\/"
+    "354C4206621C699D890AD8273D2860BBFD2CA44D" : "cyhz_ios_component_support\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Cyhz_Component_Support",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

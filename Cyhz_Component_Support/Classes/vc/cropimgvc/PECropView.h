@@ -28,6 +28,18 @@
 
 @property (nonatomic, weak, readonly) UIRotationGestureRecognizer *rotationGestureRecognizer;
 
+//取景框的背景。
+//liuxiaolong 201612131507
+@property (nonatomic)UIImage *cropFrameImg;
+
+//设置固定的取景框的区域。
+//liuxiaolong 201612132006
+@property (nonatomic)CGRect forceCropRect;
+
+//取景框是否可以不滑动滑动。
+//liuxiaolong 201612131517
+@property (nonatomic)BOOL isNotSilde;
+
 - (void)resetCropRect;
 - (void)resetCropRectAnimated:(BOOL)animated;
 

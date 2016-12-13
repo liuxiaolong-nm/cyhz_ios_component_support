@@ -100,6 +100,14 @@ static const CGFloat MarginLeft = 20.0f;
     [self addSubview:self.bottomOverlayView];
 }
 
+-(void)setIsNotSilde:(BOOL)isNotSilde{
+    self.cropRectView.isNotSilde = isNotSilde;
+}
+
+-(void)setCropFrameImg:(UIImage *)cropFrameImg{
+    self.cropRectView.cropFrameImg = cropFrameImg;
+}
+
 #pragma mark -
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
@@ -147,10 +155,14 @@ static const CGFloat MarginLeft = 20.0f;
     }
     
     if (!self.isResizing) {
-        [self layoutCropRectViewWithCropRect:self.scrollView.frame];
-        
-        if (self.interfaceOrientation != interfaceOrientation) {
-            [self zoomToCropRect:self.scrollView.frame];
+        if (CGRectIsNull(self.forceCropRect)) {
+            [self layoutCropRectViewWithCropRect:self.scrollView.frame];
+            
+            if (self.interfaceOrientation != interfaceOrientation) {
+                [self zoomToCropRect:self.scrollView.frame];
+            }
+        }else{
+            [self layoutCropRectViewWithCropRect:self.forceCropRect];
         }
     }
     

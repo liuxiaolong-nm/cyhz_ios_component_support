@@ -16,6 +16,10 @@
 @property (nonatomic, weak) id<PEResizeControlViewDelegate> delegate;
 @property (nonatomic, readonly) CGPoint translation;
 
+//设置是否可以滑动。
+//liuxiaolong 201612131514
+@property BOOL isChange;
+
 @end
 
 @protocol PEResizeControlViewDelegate <NSObject>

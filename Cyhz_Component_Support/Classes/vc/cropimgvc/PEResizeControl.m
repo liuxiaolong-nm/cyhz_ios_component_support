@@ -17,15 +17,23 @@
 
 @implementation PEResizeControl
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _isChange = true;
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, 44.0f, 44.0f)];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         self.exclusiveTouch = YES;
-        
-        UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-        [self addGestureRecognizer:gestureRecognizer];
+            UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+            [self addGestureRecognizer:gestureRecognizer];
     }
     
     return self;
@@ -33,6 +41,7 @@
 
 - (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer
 {
+    if (_isChange) {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         CGPoint translationInView = [gestureRecognizer translationInView:self.superview];
         self.startPoint = CGPointMake(roundf(translationInView.x), translationInView.y);
@@ -53,6 +62,7 @@
             [self.delegate resizeControlViewDidEndResizing:self];
         }
     }
+  }
 }
 
 @end

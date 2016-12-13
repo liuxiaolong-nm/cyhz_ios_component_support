@@ -7,11 +7,9 @@
 //
 
 #import "PECropViewController.h"
-#import "PECropView.h"
 
 @interface PECropViewController () <UIActionSheetDelegate>
 
-@property (nonatomic) PECropView *cropView;
 @property (nonatomic) UIActionSheet *actionSheet;
 
 - (void)commonInit;
@@ -74,6 +72,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     
     self.cropView = [[PECropView alloc] initWithFrame:contentView.bounds];
     [contentView addSubview:self.cropView];
+    self.cropView.forceCropRect = self.forceCropRect;
 }
 
 - (void)viewDidLoad
@@ -103,6 +102,13 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
 //    self.navigationController.toolbarHidden = self.toolbarHidden;
     self.cropView.image = self.image;
     
+    //传递取景框图片和是否可以缩放设置。
+    //liuxiaolong 201612131750
+    //------------------------------------
+    self.cropView.cropFrameImg = self.cropFrameImg_PECrop;
+    self.cropView.isNotSilde = self.isNotSilde_PECrop;
+    //------------------------------------
+
     self.cropView.rotationGestureRecognizer.enabled = _rotationEnabled;
 }
 
@@ -127,7 +133,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
      *
      *  liuxiaolong 2016-08-31 19:01
      */
-    self.cropView.cropAspectRatio = 1.0f;
+    //self.cropView.cropAspectRatio = 1.0f;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

@@ -25,7 +25,9 @@
 
 @end
 
-@implementation PECropRectView
+@implementation PECropRectView{
+    UIImageView *imageView;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -36,46 +38,79 @@
         
         self.showsGridMajor = YES;
         self.showsGridMinor = NO;
+        self.isNotSilde = true;
         
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectInset(self.bounds, -2.0f, -2.0f)];
+        imageView = [[UIImageView alloc] initWithFrame:CGRectInset(self.bounds, -2.0f, -2.0f)];
         imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        imageView.image = [[UIImage imageNamed:@"PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder"] resizableImageWithCapInsets:UIEdgeInsetsMake(23.0f, 23.0f, 23.0f, 23.0f)];
+        if (_cropFrameImg) {
+            imageView.image = _cropFrameImg;
+        }else{
+            imageView.image = [[UIImage imageNamed:@"PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder"] resizableImageWithCapInsets:UIEdgeInsetsMake(23.0f, 23.0f, 23.0f, 23.0f)];
+
+        }
         [self addSubview:imageView];
         
         self.topLeftCornerView = [[PEResizeControl alloc] init];
+        self.topLeftCornerView.isChange = !self.isNotSilde;
         self.topLeftCornerView.delegate = self;
         [self addSubview:self.topLeftCornerView];
         
         self.topRightCornerView = [[PEResizeControl alloc] init];
+        self.topRightCornerView.isChange = !self.isNotSilde;
         self.topRightCornerView.delegate = self;
         [self addSubview:self.topRightCornerView];
         
         self.bottomLeftCornerView = [[PEResizeControl alloc] init];
+        self.bottomLeftCornerView.isChange = !self.isNotSilde;
         self.bottomLeftCornerView.delegate = self;
         [self addSubview:self.bottomLeftCornerView];
         
         self.bottomRightCornerView = [[PEResizeControl alloc] init];
+        self.bottomRightCornerView.isChange = !self.isNotSilde;
         self.bottomRightCornerView.delegate = self;
         [self addSubview:self.bottomRightCornerView];
         
         self.topEdgeView = [[PEResizeControl alloc] init];
+        self.topEdgeView.isChange = !self.isNotSilde;
         self.topEdgeView.delegate = self;
         [self addSubview:self.topEdgeView];
         
         self.leftEdgeView = [[PEResizeControl alloc] init];
+        self.leftEdgeView.isChange = !self.isNotSilde;
         self.leftEdgeView.delegate = self;
         [self addSubview:self.leftEdgeView];
         
         self.bottomEdgeView = [[PEResizeControl alloc] init];
+        self.bottomEdgeView.isChange = !self.isNotSilde;
         self.bottomEdgeView.delegate = self;
         [self addSubview:self.bottomEdgeView];
         
         self.rightEdgeView = [[PEResizeControl alloc] init];
+        self.rightEdgeView.isChange = !self.isNotSilde;
         self.rightEdgeView.delegate = self;
         [self addSubview:self.rightEdgeView];
     }
     
     return self;
+}
+
+-(void)setIsNotSilde:(BOOL)isNotSilde{
+    _isNotSilde = isNotSilde;
+    self.topLeftCornerView.isChange = !isNotSilde;
+    self.topRightCornerView.isChange = !isNotSilde;
+    self.bottomLeftCornerView.isChange = !isNotSilde;
+    self.bottomRightCornerView.isChange = !isNotSilde;
+    self.topEdgeView.isChange = !isNotSilde;
+    self.leftEdgeView.isChange = !isNotSilde;
+    self.bottomEdgeView.isChange = !isNotSilde;
+    self.rightEdgeView.isChange = !isNotSilde;
+}
+
+-(void)setCropFrameImg:(UIImage *)cropFrameImg{
+    _showsGridMajor = NO;
+    _showsGridMinor = NO;
+    _cropFrameImg = cropFrameImg;
+    imageView.image = cropFrameImg;
 }
 
 #pragma mark -
