@@ -155,14 +155,18 @@ static const CGFloat MarginLeft = 20.0f;
     }
     
     if (!self.isResizing) {
-        if (CGRectIsNull(self.forceCropRect)) {
+        if (CGRectIsEmpty(self.forceCropRect)) {
             [self layoutCropRectViewWithCropRect:self.scrollView.frame];
             
             if (self.interfaceOrientation != interfaceOrientation) {
                 [self zoomToCropRect:self.scrollView.frame];
             }
         }else{
+            self.scrollView.frame = self.forceCropRect;
             [self layoutCropRectViewWithCropRect:self.forceCropRect];
+            if (self.interfaceOrientation != interfaceOrientation) {
+                [self zoomToCropRect:self.scrollView.frame];
+            }
         }
     }
     

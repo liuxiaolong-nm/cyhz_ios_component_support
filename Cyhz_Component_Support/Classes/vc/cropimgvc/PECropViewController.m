@@ -72,7 +72,9 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     
     self.cropView = [[PECropView alloc] initWithFrame:contentView.bounds];
     [contentView addSubview:self.cropView];
-    self.cropView.forceCropRect = self.forceCropRect;
+    if (!CGRectIsEmpty(self.forceCropRect)) {
+        self.cropView.forceCropRect = self.forceCropRect;
+    }
 }
 
 - (void)viewDidLoad
@@ -99,7 +101,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
                                                                            action:@selector(constrain:)];
         self.toolbarItems = @[flexibleSpace, constrainButton, flexibleSpace];
     }
-//    self.navigationController.toolbarHidden = self.toolbarHidden;
+   // self.navigationController.toolbarHidden = self.toolbarHidden;
     self.cropView.image = self.image;
     
     //传递取景框图片和是否可以缩放设置。
@@ -110,6 +112,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     //------------------------------------
 
     self.cropView.rotationGestureRecognizer.enabled = _rotationEnabled;
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -269,7 +272,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
             ratio = height / width;
             cropRect.size = CGSizeMake(CGRectGetWidth(cropRect), CGRectGetWidth(cropRect) * ratio);
         }
-        self.cropView.cropRect = cropRect;
+       // self.cropView.cropRect = cropRect;
     } else if (buttonIndex == 1) {
         self.cropView.cropAspectRatio = 1.0f;
     } else if (buttonIndex == 2) {

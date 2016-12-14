@@ -118,6 +118,13 @@
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     NSArray *subviews = self.subviews;
+    //设置取景框的边缘不可滑动。
+    //liuxiaolong 201612141216
+    //------------------------------
+    if (self.isNotSilde) {
+        return nil;
+    }
+    //------------------------------
     for (UIView *subview in subviews) {
         if ([subview isKindOfClass:[PEResizeControl class]]) {
             if (CGRectContainsPoint(subview.frame, point)) {
