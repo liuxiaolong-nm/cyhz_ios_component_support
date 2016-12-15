@@ -107,6 +107,9 @@
 }
 
 -(void)setCropFrameImg:(UIImage *)cropFrameImg{
+    if (!cropFrameImg) {
+        return;
+    }
     _showsGridMajor = NO;
     _showsGridMinor = NO;
     _cropFrameImg = cropFrameImg;
