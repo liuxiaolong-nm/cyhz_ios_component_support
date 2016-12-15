@@ -165,7 +165,8 @@ static const CGFloat MarginLeft = 20.0f;
             self.scrollView.frame = self.forceCropRect;
             [self layoutCropRectViewWithCropRect:self.forceCropRect];
             if (self.interfaceOrientation != interfaceOrientation) {
-                [self setCropAspectRatio:0.5];
+                self.scrollView.zoomScale = 2;
+               // self.scrollView.center = self.cropRectView.center;
                // [self zoomToCropRect:self.scrollView.frame];
             }
         }
