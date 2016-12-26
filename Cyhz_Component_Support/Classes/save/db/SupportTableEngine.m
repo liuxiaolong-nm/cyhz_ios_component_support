@@ -94,6 +94,21 @@
     return datas;
 }
 
++(NSArray*)supportQueryWhere:(NSDictionary<NSString*,NSString*>*)keyvalues{
+    NSMutableArray *conditions = [NSMutableArray new];
+    [keyvalues enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
+        NSString *condition = [NSString stringWithFormat:@"%@ = '%@'",key,obj];
+        [conditions addObject:condition];
+    }];
+    NSString *concrete = [conditions componentsJoinedByString:@" AND "];
+    RLMResults *res =[self.class objectsWhere:concrete];
+    NSMutableArray *datas = [NSMutableArray new];
+    for (RLMObject *object in res) {
+        [datas addObject:object];
+    }
+    return datas;
+}
+
 +(NSString *)primaryKey{
     return @"mId";
 }

@@ -30,6 +30,8 @@ typedef void(^SupportDBUpdateAction)();
 
  +(NSArray*)supportQueryAll;
 
+ +(NSArray*)supportQueryWhere:(NSDictionary*)keyvalues;
+
 @end
 
 @protocol SupportDBTableExt <NSObject>
