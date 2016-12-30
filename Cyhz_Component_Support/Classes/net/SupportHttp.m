@@ -25,8 +25,21 @@
     conn = [SupportReachability reachabilityForInternetConnection];
     isBack = false;
     manager = [AFHTTPSessionManager manager];
+    manager.securityPolicy = [self customSecurityPolicy];
     [self setTimeout:15];
     return self;
+}
+
+- (AFSecurityPolicy*)customSecurityPolicy {
+//    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"https" ofType:@"cer"];
+//    NSData * certData =[NSData dataWithContentsOfFile:cerPath];
+//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+//    [securityPolicy setAllowInvalidCertificates:YES];
+//    NSSet * certSet = [[NSSet alloc] initWithObjects:certData, nil];
+//    [securityPolicy setPinnedCertificates:certSet];
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+
+    return securityPolicy;
 }
 
 -(void)setTimeout:(int)time{
