@@ -6,6 +6,7 @@
 //
 //
 #import <Foundation/Foundation.h>
+
 /**
  *  所有要储存的数据必须实现此协议。
  *
@@ -28,7 +29,7 @@
  *
  *  liuxiaolong 2016-06-03 14:50
  */
--(NSData*)data;
+-(id)data;
 
 @end
 
@@ -70,5 +71,9 @@
  *  liuxiaolong 2016-06-03 15:00
  */
 -(id<SupportUnitData>)query:(NSString*)saveKey;
+
+-(void)add:(id)data Key:(NSString*)saveKey;
+
+-(id)get:(NSString*)saveKey;
 
 @end

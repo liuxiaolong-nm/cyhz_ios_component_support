@@ -30,11 +30,6 @@
     return [mNSUserDefaults objectForKey:saveKey];
 }
 
--(void)removeReal:(NSString *)saveKey{
-    [mNSUserDefaults removeObjectForKey:saveKey];
-    [mNSUserDefaults synchronize];
-}
-
 -(void)remove:(NSString *)saveKey{
     [mNSUserDefaults removeObjectForKey:saveKey];
     [mNSUserDefaults synchronize];
@@ -46,6 +41,20 @@
         [mNSUserDefaults removeObjectForKey:key];
     }
     [mNSUserDefaults synchronize];
+}
+
+-(void)save:(id<SupportUnitData>)data Key:(NSString *)saveKey{
+    //if ([[data data] isKindOfClass:[NSData class]]) {
+        [mNSUserDefaults setObject:[data data] forKey:saveKey];
+        [mNSUserDefaults setObject:[data extend] forKey:[NSString stringWithFormat:@"%@_%@",saveKey,[self extKey]]];
+        [mNSUserDefaults synchronize];
+   // }
+}
+
+-(id<SupportUnitData>)query:(NSString *)saveKey{
+    id data = [mNSUserDefaults objectForKey:saveKey];
+    NSDictionary *ext = [mNSUserDefaults objectForKey:[NSString stringWithFormat:@"%@_%@",saveKey,[self extKey]]];
+    return [[SupportUnitDataDefaultImp alloc] initData:data Extend:ext];
 }
 
 @end

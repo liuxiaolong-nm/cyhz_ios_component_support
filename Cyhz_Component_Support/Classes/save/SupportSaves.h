@@ -9,9 +9,7 @@
 #ifndef save_h
 #define save_h
 
-#import "SupportDiskLightSave.h"
-#import "SupportDiskSave.h"
-#import "SupportRAMSave.h"
+#import "SupportSaveFactory.h"
 #import "SupportTableEngine.h"
 
 #endif /* save_h */
