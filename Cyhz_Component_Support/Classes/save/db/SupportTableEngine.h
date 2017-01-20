@@ -17,6 +17,9 @@ typedef void(^SupportDBTableObServer)(NSArray<id> *datas);
 
 @property NSString *mId;
 
++(void)supportSaveAll:(NSArray<SupportTableEngine *>*)datas;
+
++(void)supportRemoveAll:(NSArray<SupportTableEngine *>*)datas;
 //设置数据变化监听者。
 //liuxiaolong 201611091634
 -(void)setDataObServer:(SupportDBTableObServer)observer;

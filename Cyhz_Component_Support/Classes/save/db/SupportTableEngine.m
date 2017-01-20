@@ -97,7 +97,12 @@
 +(NSArray*)supportQueryWhere:(NSDictionary<NSString*,NSString*>*)keyvalues{
     NSMutableArray *conditions = [NSMutableArray new];
     [keyvalues enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
-        NSString *condition = [NSString stringWithFormat:@"%@ = '%@'",key,obj];
+        NSString *condition;
+        if ([obj isKindOfClass:[NSString class]]) {
+            condition = [NSString stringWithFormat:@"%@ = '%@'",key,obj];
+        }else{
+            condition = [NSString stringWithFormat:@"%@ = %@",key,obj];
+        }
         [conditions addObject:condition];
     }];
     NSString *concrete = [conditions componentsJoinedByString:@" AND "];
@@ -107,6 +112,26 @@
         [datas addObject:object];
     }
     return datas;
+}
+
+
++(void)supportSaveAll:(NSArray<SupportTableEngine *>*)datas{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    for (SupportTableEngine *engine in datas) {
+        [realm addObject:engine];
+    }
+    [realm commitWriteTransaction];
+
+}
+
++(void)supportRemoveAll:(NSArray<SupportTableEngine *>*)datas{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    for (SupportTableEngine *engine in datas) {
+        [realm deleteObject:engine];
+    }
+    [realm commitWriteTransaction];
 }
 
 +(NSString *)primaryKey{
